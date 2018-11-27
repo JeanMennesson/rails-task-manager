@@ -1,0 +1,21 @@
+<h1>My tasks</h1>
+  <div class="btn-group" data-toggle="buttons">
+    <ul>
+      <% @tasks.each do |task| %>
+        <label class="customcheck">
+          <li class="list-unstyled list-inline">
+            <p>
+              <%= link_to task.title, task_path(task) %> .
+                  <%= link_to "Delete", task_path(task),
+                  method: :delete,
+                  data: {confirm: "Are you sure ?"}%>
+            </p>
+          </li>
+          <input type="checkbox" <%= task.completed ? "checked" : "" %> disabled>
+          <span class="checkmark"></span>
+        </label>
+      <% end %>
+    </ul>
+  </div>
+  <hr>
+ <%= link_to "Add a new task", tasks_new_path(@task) %>

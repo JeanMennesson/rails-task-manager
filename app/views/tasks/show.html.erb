@@ -1,0 +1,20 @@
+<div class="container" id="show">
+  <div class="nav">
+    <h1><%=@task[:title]%></h1>
+    <span class="glyphicon glyphicon-pencil" style="margin-top:10px"></span>
+    <p><%= link_to "Edit this task", task_edit_path%></p>
+  </div>
+  <div class="details">
+    <p><%= @task[:details] %></p>
+  </div>
+   <label class="customcheck">
+    <input type="checkbox" <%= @task.completed ? "checked" : "" %> disabled>
+    <span class="checkmark"></span>
+    <p><%= "This task is completed" if @task.completed == true %></p>
+    <p><%= "This task is not completed yet" if @task.completed == false %></p>
+    <hr>
+    <p><%= link_to "Back to the list", tasks_path%></p>
+</div>
+
+
+
