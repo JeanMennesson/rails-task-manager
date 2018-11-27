@@ -6,6 +6,7 @@
           <li class="list-unstyled list-inline">
             <p>
               <%= link_to task.title, task_path(task) %> .
+                <span class="fas fa-trash-alt"></span>
                   <%= link_to "Delete", task_path(task),
                   method: :delete,
                   data: {confirm: "Are you sure ?"}%>
